@@ -8,6 +8,8 @@ function App() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const BASE_URL = "https://blr-pincode-finder.onrender.com"
+
   const handleSearch = async (e) => {
     e.preventDefault()
     if (!inputValue.trim()) return
@@ -18,8 +20,8 @@ function App() {
 
     try {
       const endpoint = searchType === 'pincode' 
-        ? `http://localhost:3000/api/pincode/pincode/${inputValue}`
-        : `http://localhost:3000/api/pincode/area/${inputValue}`
+        ? `${BASE_URL}/api/pincode/pincode/${inputValue}`
+        : `${BASE_URL}/api/pincode/area/${inputValue}`
       
       const response = await fetch(endpoint)
       const data = await response.json()
