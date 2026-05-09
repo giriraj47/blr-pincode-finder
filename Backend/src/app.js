@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5174",
+    origin: ["http://localhost:5174", "https://blr-pincode-finder.onrender.com"],
   })
 );
 app.use(express.json());
