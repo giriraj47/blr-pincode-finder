@@ -14,4 +14,8 @@ const pinRoutes = require("./routes/pin.routes");
 
 app.use("/api/pincode", pinRoutes);
 
+app.get("/", (req, res) => {
+  res.send("BLR Pincode Finder API is running...");
+});
+
 module.exports = app;
